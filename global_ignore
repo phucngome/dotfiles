@@ -1,0 +1,12 @@
+tags
+*.DS_Store
+node_modules/*
+dump.rdb
+vendor
+.vscode
+.idea
+debug
+.php_cs.cache
+tags
+tags.lock
+tags.temp
