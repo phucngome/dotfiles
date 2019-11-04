@@ -1,0 +1,24 @@
+--recurse=yes
+--exclude=.git
+--exclude=node_modules/*
+--exclude=db/*
+--exclude=log/*
+--exclude=public/*
+--exclude=storate/*
+--exclude=bootstrap/*
+--exclude=*.html
+--exclude=*.css
+--exclude=*.js
+--exclude=database/*
+--langdef=Go
+--langmap=Go:.go
+--regex-Go=/func([ \t]+\([^)]+\))?[ \t]+([a-zA-Z0-9_]+)/\2/f,func/
+--regex-Go=/type[ \t]+([a-zA-Z_][a-zA-Z0-9_]+)/\1/t,type/
+
+--totals=yes
+--tag-relative=yes
+--PHP-kinds=+cf
+--regex-PHP=/abstract class ([^ ]*)/\1/c/
+--regex-PHP=/interface ([^ ]*)/\1/c/
+--regex-PHP=/trait ([^ ]*)/\1/c/
+--regex-PHP=/(public |static |abstract |protected |private )+ function +([^ \(]*)/\2/f/

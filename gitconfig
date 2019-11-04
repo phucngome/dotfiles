@@ -1,0 +1,5 @@
+[user]
+	name = Phuc
+	email = ngovanphuc@hotmail.com
+[core]
+	excludesfile = /Users/phuc/.global_ignore
