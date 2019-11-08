@@ -39,4 +39,5 @@ export PGDATA=/Users/phuc/Projects/pgdata
 export PATH=~/.npm-global/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
