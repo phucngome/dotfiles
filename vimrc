@@ -48,6 +48,7 @@ function! LoadPlug()
     Plug 'google/vim-maktaba'
     Plug 'google/vim-codefmt'
     Plug 'arcticicestudio/nord-vim'
+    Plug 'christoomey/vim-tmux-navigator'
 
     call plug#end()
 

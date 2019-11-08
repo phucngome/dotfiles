@@ -22,9 +22,6 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export GOPROXY=https://proxy.golang.org
 export GOPATH=/Users/phuc/Projects/go
 export PATH=${PATH}:$GOPATH/bin
-export PGDATA=/Users/phuc/Projects/pgdata
-export PATH=~/.npm-global/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home)
 
 alias gw="cd /Users/phuc/Projects/go/src/github.com/phucngome"
 alias w="cd ~/Projects"
@@ -35,5 +32,11 @@ alias gb="git branch"
 alias ll="ls -al"
 alias vscache="sh ~/.vscache"
 alias mongod="mongod --config /usr/local/etc/mongod.conf --fork"
+alias doctrine="vendor/bin/doctrine "
 
+# postgresql
+export PGDATA=/Users/phuc/Projects/pgdata
+export PATH=~/.npm-global/bin:$PATH
+export JAVA_HOME=$(/usr/libexec/java_home)
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
