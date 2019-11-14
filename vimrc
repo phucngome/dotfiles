@@ -23,32 +23,23 @@ function! LoadPlug()
     Plug 'ervandew/supertab'
     Plug 'zhaocai/GoldenView.Vim'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'romainl/flattened'
-    Plug 'jelera/vim-javascript-syntax'
-    Plug 'pangloss/vim-javascript'
-    Plug 'fatih/molokai'
     Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
     Plug 'uarun/vim-protobuf'
-    Plug 'tomlion/vim-solidity'
     Plug 'junegunn/vim-easy-align'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'tpope/vim-surround'
     Plug 'Yggdroot/indentLine'
-    Plug 'posva/vim-vue'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'stephpy/vim-php-cs-fixer'
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
-    Plug 'sheerun/vim-polyglot'
     Plug 'editorconfig/editorconfig-vim'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'Quramy/tsuquyomi'
-    Plug 'bfrg/vim-cpp-modern'
     Plug 'google/vim-maktaba'
     Plug 'google/vim-codefmt'
     Plug 'arcticicestudio/nord-vim'
     Plug 'christoomey/vim-tmux-navigator'
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
     call plug#end()
 
@@ -138,6 +129,7 @@ let g:vim_json_syntax_conceal         = 0
 let g:airline_powerline_fonts         = 1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:user_emmet_install_global=0
+let g:pymode_python = 'python3'
 
 let g:ale_linters = {
 \   'html': [''],
