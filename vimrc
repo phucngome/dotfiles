@@ -26,8 +26,8 @@ function! LoadPlug()
     Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
     Plug 'uarun/vim-protobuf'
     Plug 'junegunn/vim-easy-align'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
+    " Plug 'SirVer/ultisnips'
+    " Plug 'honza/vim-snippets'
     Plug 'tpope/vim-surround'
     Plug 'Yggdroot/indentLine'
     Plug 'ludovicchabant/vim-gutentags'
@@ -116,7 +116,7 @@ set fcs=vert:\|
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 
 let mapleader = "\\"
-let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
 let g:php_cs_fixer_rules = "@PSR2"
 let g:fzf_layout = { 'up': '~40%' }
 let g:go_list_type                    = "quickfix"
@@ -147,6 +147,7 @@ augroup autoformat_settings
   autocmd BufRead,BufNewFile *.blade.php set filetype=html
   autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
   autocmd FileType html,css,javascript,javascript.jsx EmmetInstall
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
 

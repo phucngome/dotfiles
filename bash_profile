@@ -19,6 +19,7 @@ export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
+export GO111MODULE=on
 export GOPROXY=https://proxy.golang.org
 export GOPATH=/Users/phuc/Projects/go
 export PATH=${PATH}:$GOPATH/bin
@@ -33,6 +34,8 @@ alias ll="ls -al"
 alias vscache="sh ~/.vscache"
 alias mongod="mongod --config /usr/local/etc/mongod.conf --fork"
 alias doctrine="vendor/bin/doctrine "
+alias python="python3"
+alias pip="pip3"
 
 # postgresql
 export PGDATA=/Users/phuc/Projects/pgdata
