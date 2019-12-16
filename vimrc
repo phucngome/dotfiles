@@ -17,7 +17,8 @@ function! LoadPlug()
     Plug 'airblade/vim-gitgutter'
     Plug 'vim-airline/vim-airline'
     Plug 'Shougo/neocomplete.vim'
-    Plug 'w0rp/ale'
+    " Plug 'w0rp/ale'
+    Plug 'phucngome/ale'
     Plug 'ervandew/supertab'
     Plug 'zhaocai/GoldenView.Vim'
     Plug 'ryanoasis/vim-devicons'
@@ -80,9 +81,11 @@ let g:go_auto_type_info                     = 1
 let g:user_emmet_install_global             = 0
 let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
-let g:ale_linters                           = {'html': ['']}
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 ='<C-Z>'
+let g:ale_linters                           = {'html': [''], 'go': ['govet']}
+let g:ale_sign_error                        = '✘'
+let g:ale_sign_warning                      = '⚠'
 autocmd FileType html,css,javascript,jsx EmmetInstall
 
 " custom key map
