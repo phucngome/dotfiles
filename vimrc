@@ -62,6 +62,7 @@ set tags+=tags,.tags
 set mouse=a
 colorscheme nord
 set list listchars=tab:→\ ,trail:∙,nbsp:•
+autocmd FileType css,html,javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 
 
 let g:goldenview__enable_default_mapping    = 0
@@ -81,7 +82,7 @@ let g:user_emmet_install_global             = 0
 let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
-let g:user_emmet_leader_key                 ='<C-Z>'
+let g:user_emmet_leader_key                 ='c'
 let g:ale_linters                           = {'html': [''], 'go': ['staticcheck']}
 let g:ale_sign_error                        = '✘'
 let g:ale_sign_warning                      = '⚠'
