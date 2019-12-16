@@ -27,6 +27,10 @@ function! LoadPlug()
     Plug 'junegunn/fzf.vim'
     Plug 'arcticicestudio/nord-vim'
     Plug 'christoomey/vim-tmux-navigator'
+    Plug 'pangloss/vim-javascript'
+    Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+    Plug 'MaxMEllon/vim-jsx-pretty'
+    Plug 'Yggdroot/indentLine'
 
     call plug#end()
 
@@ -90,8 +94,11 @@ let g:ale_echo_msg_error_str                = 'E'
 let g:ale_echo_msg_warning_str              = 'W'
 let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
 let g:airline#extensions#ale#enabled        = 1
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 autocmd FileType html,css,javascript,jsx EmmetInstall
-
+let g:prettier#autoformat = 0
+let g:prettier#quickfix_enabled = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " custom key map
 map <C-j> <C-W>j
