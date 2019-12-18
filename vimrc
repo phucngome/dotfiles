@@ -31,6 +31,7 @@ function! LoadPlug()
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'MaxMEllon/vim-jsx-pretty'
     Plug 'Yggdroot/indentLine'
+    Plug 'posva/vim-vue'
 
     call plug#end()
 
@@ -86,7 +87,7 @@ let g:user_emmet_install_global             = 0
 let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
-let g:user_emmet_leader_key                 ='c-z'
+let g:user_emmet_leader_key                 =','
 let g:ale_linters                           = {'html': [''], 'go': ['staticcheck']}
 let g:ale_sign_error                        = '✘'
 let g:ale_sign_warning                      = '⚠'
