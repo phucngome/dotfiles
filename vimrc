@@ -67,7 +67,7 @@ set tags+=tags,.tags
 set mouse=a
 colorscheme nord
 set list listchars=tab:→\ ,trail:∙,nbsp:•
-autocmd FileType css,html,javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType css,html,javascript,vue setlocal shiftwidth=2 softtabstop=2 expandtab
 
 
 let g:goldenview__enable_default_mapping    = 0
@@ -96,7 +96,7 @@ let g:ale_echo_msg_warning_str              = 'W'
 let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
 let g:airline#extensions#ale#enabled        = 1
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
-autocmd FileType html,css,javascript,jsx EmmetInstall
+autocmd FileType html,css,javascript,jsx,vue EmmetInstall
 let g:prettier#autoformat = 0
 let g:prettier#quickfix_enabled = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
