@@ -32,6 +32,7 @@ function! LoadPlug()
     Plug 'MaxMEllon/vim-jsx-pretty'
     Plug 'Yggdroot/indentLine'
     Plug 'posva/vim-vue'
+    Plug 'hashivim/vim-terraform'
 
     call plug#end()
 
@@ -100,6 +101,8 @@ autocmd FileType html,css,javascript,jsx,vue EmmetInstall
 let g:prettier#autoformat = 0
 let g:prettier#quickfix_enabled = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 
 " custom key map
 map <C-j> <C-W>j
