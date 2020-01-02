@@ -41,6 +41,14 @@ alias pip="pip3"
 export PGDATA=/Users/phuc/Projects/pgdata
 export PATH=~/.npm-global/bin:$PATH
 export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=/Users/phuc/Projects/protoc/bin:$PATH
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/phuc/Projects/google-cloud-sdk/path.bash.inc' ]; then . '/Users/phuc/Projects/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/phuc/Projects/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/phuc/Projects/google-cloud-sdk/completion.bash.inc'; fi
+

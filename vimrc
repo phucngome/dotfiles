@@ -33,6 +33,8 @@ function! LoadPlug()
     Plug 'Yggdroot/indentLine'
     Plug 'posva/vim-vue'
     Plug 'hashivim/vim-terraform'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
 
     call plug#end()
 
@@ -89,7 +91,7 @@ let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 =','
-let g:ale_linters                           = {'html': [''], 'go': ['staticcheck']}
+let g:ale_linters                           = {'html': [''], 'go': ['golint']}
 let g:ale_sign_error                        = '✘'
 let g:ale_sign_warning                      = '⚠'
 let g:ale_echo_msg_error_str                = 'E'
@@ -103,6 +105,7 @@ let g:prettier#quickfix_enabled = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+let g:UltiSnipsExpandTrigger="<tab>"
 
 " custom key map
 map <C-j> <C-W>j
