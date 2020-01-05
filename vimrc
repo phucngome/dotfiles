@@ -35,6 +35,7 @@ function! LoadPlug()
     Plug 'hashivim/vim-terraform'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
     call plug#end()
 
@@ -70,7 +71,7 @@ set tags+=tags,.tags
 set mouse=a
 colorscheme nord
 set list listchars=tab:→\ ,trail:∙,nbsp:•
-autocmd FileType css,html,javascript,vue setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
 
 
 let g:goldenview__enable_default_mapping    = 0
@@ -106,6 +107,8 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:ale_php_phpcs_standard="PSR2"
+
 
 " custom key map
 map <C-j> <C-W>j
