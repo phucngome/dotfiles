@@ -431,7 +431,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>330 297 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>231 421 986 356 0 0 1280 777 </string>
+	<string>264 336 1010 441 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1086,7 +1086,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodeProNerdFontCompleteM-Semibold 14</string>
+			<string>GoMonoNerdFontComplete- 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -1181,6 +1181,7 @@
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>GoMono Nerd Font</string>
 		<string>SauceCodePro Nerd Font Mono</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
@@ -1193,11 +1194,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>4769A75B-5C41-449E-A382-684116AB2A85</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>99</integer>
+	<integer>117</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>594875929.20928001</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1960,7 +1961,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-28T03:41:19Z</date>
+	<date>2020-01-12T09:52:18Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
