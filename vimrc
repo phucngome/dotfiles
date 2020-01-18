@@ -28,8 +28,6 @@ function! LoadPlug()
     Plug 'arcticicestudio/nord-vim'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'pangloss/vim-javascript'
-    Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-    Plug 'MaxMEllon/vim-jsx-pretty'
     Plug 'Yggdroot/indentLine'
     Plug 'posva/vim-vue'
     Plug 'hashivim/vim-terraform'
@@ -71,11 +69,11 @@ set tags+=tags,.tags
 set mouse=a
 colorscheme nord
 set list listchars=tab:→\ ,trail:∙,nbsp:•
-autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html,css,javascript,jsx,vue EmmetInstall
 
 
 let g:goldenview__enable_default_mapping    = 0
-let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '\var$', '\.vscode$', '^node_modules$', '^tags$']
+let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '\var$', '\.vscode$', '^node_modules$', '^tags$', '^__pycache__$']
 let NERDTreeAutoDeleteBuffer                = 1
 let NERDTreeMinimalUI                       = 1
 let NERDTreeShowHidden                      = 1
@@ -91,23 +89,23 @@ let g:user_emmet_install_global             = 0
 let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
-let g:user_emmet_leader_key                 =','
-let g:ale_linters                           = {'html': [''], 'go': ['golint']}
+let g:user_emmet_leader_key                 = ','
+let g:ale_linters_explicit                  = 1
+let g:ale_linters                           = {'html': [''], 'go': ['golint'], 'javascript': ['standard']}
+let g:ale_fixers                            = {'javascript': ['standard']}
 let g:ale_sign_error                        = '✘'
 let g:ale_sign_warning                      = '⚠'
 let g:ale_echo_msg_error_str                = 'E'
 let g:ale_echo_msg_warning_str              = 'W'
 let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
+let g:ale_lint_on_save                      = 1
 let g:airline#extensions#ale#enabled        = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
-autocmd FileType html,css,javascript,jsx,vue EmmetInstall
-let g:prettier#autoformat = 0
-let g:prettier#quickfix_enabled = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-let g:terraform_align=1
-let g:terraform_fmt_on_save=1
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:ale_php_phpcs_standard="PSR2"
+let g:terraform_align                       = 1
+let g:terraform_fmt_on_save                 = 1
+let g:UltiSnipsExpandTrigger                = "<tab>"
+let g:pymode_options_colorcolumn            = 0
+let g:pymode_lint_ignore                    = ["E501", "W",]
+
 
 
 " custom key map
@@ -119,4 +117,5 @@ map <c-n> :NERDTreeToggle<CR>
 imap <c-s> <Esc>:w<CR>
 map <c-s> <Esc>:w<CR>
 map <c-p> <Esc>:Files<CR>
+map ga <Plug>(EasyAlign)
 
