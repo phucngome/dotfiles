@@ -56,7 +56,7 @@ set number
 set nowrap
 set tabstop=4
 set shiftwidth=4
-set clipboard=unnamedplus
+set clipboard=unnamed
 set expandtab
 set autoindent
 set smartindent
@@ -70,6 +70,7 @@ set tags+=tags,.tags
 colorscheme nord
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 autocmd FileType html,css,javascript,jsx,vue EmmetInstall
+autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
 
 
 let g:goldenview__enable_default_mapping    = 0
