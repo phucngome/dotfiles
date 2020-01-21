@@ -1,3 +1,4 @@
+set nocompatible
 function! LoadPlug()
     let plug_installed=filereadable(expand('~/.vim/autoload/plug.vim'))
     if plug_installed == 0
@@ -34,6 +35,7 @@ function! LoadPlug()
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+    Plug 'ludovicchabant/vim-gutentags'
 
     call plug#end()
 
@@ -47,7 +49,6 @@ endfunction
 call LoadPlug()
 
 
-set nocompatible
 filetype plugin indent on
 syntax enable
 set encoding=utf8
@@ -55,7 +56,7 @@ set number
 set nowrap
 set tabstop=4
 set shiftwidth=4
-set clipboard=unnamed
+set clipboard=unnamedplus
 set expandtab
 set autoindent
 set smartindent
@@ -66,7 +67,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 set tags+=tags,.tags
-set mouse=a
 colorscheme nord
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 autocmd FileType html,css,javascript,jsx,vue EmmetInstall
@@ -92,20 +92,20 @@ let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}
 let g:user_emmet_leader_key                 = ','
 let g:ale_linters_explicit                  = 1
 let g:ale_linters                           = {'html': [''], 'go': ['golint'], 'javascript': ['standard']}
-let g:ale_fixers                            = {'javascript': ['standard']}
+let g:ale_fixers                            = {'javascript': ['prettier_standard']}
 let g:ale_sign_error                        = '✘'
 let g:ale_sign_warning                      = '⚠'
 let g:ale_echo_msg_error_str                = 'E'
 let g:ale_echo_msg_warning_str              = 'W'
 let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_save                      = 1
+let g:ale_fix_on_save                       = 1
 let g:airline#extensions#ale#enabled        = 1
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:pymode_options_colorcolumn            = 0
 let g:pymode_lint_ignore                    = ["E501", "W",]
-
 
 
 " custom key map
@@ -116,6 +116,7 @@ map <C-l> <C-W>l
 map <c-n> :NERDTreeToggle<CR>
 imap <c-s> <Esc>:w<CR>
 map <c-s> <Esc>:w<CR>
-map <c-p> <Esc>:Files<CR>
+map <c-f> <Esc>:Files<CR>
+map <c-g> <Esc>:Rg<CR>
 map ga <Plug>(EasyAlign)
 
