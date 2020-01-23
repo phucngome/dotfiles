@@ -36,6 +36,7 @@ function! LoadPlug()
     Plug 'honza/vim-snippets'
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
     Plug 'ludovicchabant/vim-gutentags'
+    Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
     call plug#end()
 
@@ -71,6 +72,10 @@ colorscheme nord
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 autocmd FileType html,css,javascript,jsx,vue EmmetInstall
 autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:prettier#autoformat = 0
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#trailing_comma = 'all'
 
 
 let g:goldenview__enable_default_mapping    = 0
@@ -92,15 +97,16 @@ let g:go_fmt_command                        = "goimports"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
 let g:ale_linters_explicit                  = 1
-let g:ale_linters                           = {'html': [''], 'go': ['golint'], 'javascript': ['standard']}
-let g:ale_fixers                            = {'javascript': ['prettier_standard']}
+let g:ale_linters                           = {'html': [''], 'go': ['golint'], 'javascript': ['eslint'], 'vue': ['eslint']}
+let g:ale_fixers                            = {'javascript': [''], 'vue': ['']}
+" let g:ale_fixers                            = {'javascript': ['eslint'], 'vue': ['eslint']}
 let g:ale_sign_error                        = '✘'
 let g:ale_sign_warning                      = '⚠'
 let g:ale_echo_msg_error_str                = 'E'
 let g:ale_echo_msg_warning_str              = 'W'
 let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
-let g:ale_lint_on_save                      = 1
-let g:ale_fix_on_save                       = 1
+" let g:ale_lint_on_save                      = 1
+" let g:ale_fix_on_save                       = 1
 let g:airline#extensions#ale#enabled        = 1
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
