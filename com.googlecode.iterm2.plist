@@ -431,7 +431,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>330 297 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>264 336 1010 441 0 0 1280 777 </string>
+	<string>219 375 1058 402 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1182,6 +1182,7 @@
 	<key>NoSyncBFPRecents</key>
 	<array>
 		<string>GoMono Nerd Font</string>
+		<string>SauceCodePro Nerd Font</string>
 		<string>SauceCodePro Nerd Font Mono</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
@@ -1194,7 +1195,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>4769A75B-5C41-449E-A382-684116AB2A85</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>117</integer>
+	<integer>139</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1961,7 +1962,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-12T09:52:18Z</date>
+	<date>2020-01-27T11:55:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>

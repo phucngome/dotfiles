@@ -10,5 +10,5 @@ brew install htop
 brew install mariadb
 
 # some nodejs tools
-npm i -g standard prettier-standard
+npm i -g eslint prettier
 npm install -g @vue/cli

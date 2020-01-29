@@ -42,10 +42,12 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob=!.git/*'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # google cloud
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/phuc/.ssh/learngcp-262316-2db0d0022f4d.json"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/phuc/Projects/google-cloud-sdk/path.bash.inc' ]; then . '/Users/phuc/Projects/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/phuc/Projects/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/phuc/Projects/google-cloud-sdk/completion.bash.inc'; fi
+
+
+export CYPRESS_CRASH_REPORTS=0
