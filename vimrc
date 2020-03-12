@@ -34,9 +34,10 @@ function! LoadPlug()
     Plug 'hashivim/vim-terraform'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
     Plug 'ludovicchabant/vim-gutentags'
-    " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+    Plug 'MaxMEllon/vim-jsx-pretty'
+    Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+    Plug 'jparise/vim-graphql'
 
     call plug#end()
 
@@ -72,7 +73,7 @@ colorscheme nord
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 autocmd FileType html,css,javascript,jsx,vue EmmetInstall
 autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 let g:prettier#autoformat = 0
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'all'
@@ -96,8 +97,8 @@ let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
-let g:ale_linters_explicit                  = 1
-let g:ale_linters                           = {'html': [''], 'go': ['golint'], 'javascript': ['eslint'], 'vue': ['eslint']}
+let g:ale_linters_explicit                  = 0
+let g:ale_linters                           = {'html': [''], 'javascript': ['eslint'], 'vue': ['eslint']}
 let g:ale_fixers                            = {'javascript': ['eslint'], 'vue': ['eslint']}
 let g:ale_sign_error                        = '✘'
 let g:ale_sign_warning                      = '⚠'
@@ -110,8 +111,6 @@ let g:airline#extensions#ale#enabled        = 1
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
-let g:pymode_options_colorcolumn            = 0
-let g:pymode_lint_ignore                    = ["E501", "W",]
 
 
 " custom key map
