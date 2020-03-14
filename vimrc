@@ -80,7 +80,7 @@ let g:prettier#config#trailing_comma = 'all'
 
 
 let g:goldenview__enable_default_mapping    = 0
-let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '\var$', '\.vscode$', '^node_modules$', '^tags$', '^tags.lock$', '^__pycache__$']
+let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags$', '^tags.lock$', '^__pycache__$']
 let NERDTreeAutoDeleteBuffer                = 1
 let NERDTreeMinimalUI                       = 1
 let NERDTreeShowHidden                      = 1
