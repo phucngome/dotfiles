@@ -14,6 +14,7 @@ function! LoadPlug()
     Plug 'Raimondi/delimitMate'
     Plug 'mattn/emmet-vim'
     Plug 'fatih/vim-go'
+    Plug 'fatih/molokai'
     Plug 'elzr/vim-json'
     Plug 'airblade/vim-gitgutter'
     Plug 'vim-airline/vim-airline'
@@ -70,10 +71,14 @@ set nowritebackup
 set noswapfile
 set tags+=tags,.tags
 colorscheme nord
+colorscheme molokai
+let g:rehash256 = 1
+" let g:molokai_original = 1
+
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 autocmd FileType html,css,javascript,jsx,vue EmmetInstall
 autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.html PrettierAsync
 let g:prettier#autoformat = 0
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'all'
@@ -91,8 +96,11 @@ let g:neocomplete#enable_at_startup         = 1
 let g:user_emmet_install_global             = 1
 let g:vim_json_syntax_conceal               = 0
 let g:airline_powerline_fonts               = 1
-let g:go_auto_type_info                     = 1
 let g:user_emmet_install_global             = 0
+let g:go_auto_type_info                     = 1
+let g:go_metalinter_command                     = 'golangci-lint'
+let g:go_def_mode                           ='gopls'
+let g:go_info_mode                          ='gopls'
 let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
