@@ -70,9 +70,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 set tags+=tags,.tags
-colorscheme nord
+" colorscheme nord
 colorscheme molokai
-let g:rehash256 = 1
+" let g:rehash256 = 1
 " let g:molokai_original = 1
 
 set list listchars=tab:→\ ,trail:∙,nbsp:•
@@ -98,14 +98,12 @@ let g:vim_json_syntax_conceal               = 0
 let g:airline_powerline_fonts               = 1
 let g:user_emmet_install_global             = 0
 let g:go_auto_type_info                     = 1
-let g:go_metalinter_command                     = 'golangci-lint'
 let g:go_def_mode                           ='gopls'
 let g:go_info_mode                          ='gopls'
 let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
-let g:ale_linters_explicit                  = 0
 let g:ale_linters                           = {'html': [''], 'javascript': ['eslint'], 'vue': ['eslint']}
 let g:ale_fixers                            = {'javascript': ['eslint'], 'vue': ['eslint']}
 let g:ale_sign_error                        = '✘'
@@ -132,4 +130,4 @@ map <c-s> <Esc>:w<CR>
 map <c-f> <Esc>:Files<CR>
 map <c-g> <Esc>:Rg<CR>
 map ga <Plug>(EasyAlign)
-
+map <c-m> <Esc>:GoRun<CR>
