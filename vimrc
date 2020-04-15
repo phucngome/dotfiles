@@ -70,6 +70,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set tags+=tags,.tags
+set virtualedit=all
 " colorscheme nord
 colorscheme molokai
 " let g:rehash256 = 1
@@ -78,7 +79,7 @@ colorscheme molokai
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 autocmd FileType html,css,javascript,jsx,vue EmmetInstall
 autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 let g:prettier#autoformat = 0
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'all'
