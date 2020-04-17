@@ -14,7 +14,6 @@ function! LoadPlug()
     Plug 'Raimondi/delimitMate'
     Plug 'mattn/emmet-vim'
     Plug 'fatih/vim-go'
-    Plug 'fatih/molokai'
     Plug 'elzr/vim-json'
     Plug 'airblade/vim-gitgutter'
     Plug 'vim-airline/vim-airline'
@@ -27,18 +26,18 @@ function! LoadPlug()
     Plug 'junegunn/vim-easy-align'
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
-    Plug 'arcticicestudio/nord-vim'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'pangloss/vim-javascript'
+    Plug 'HerringtonDarkholme/yats.vim'
     Plug 'Yggdroot/indentLine'
     Plug 'posva/vim-vue'
     Plug 'hashivim/vim-terraform'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'ludovicchabant/vim-gutentags'
-    Plug 'MaxMEllon/vim-jsx-pretty'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'jparise/vim-graphql'
+    Plug 'phucngodev/molokai'
 
     call plug#end()
 
@@ -56,6 +55,7 @@ filetype plugin indent on
 syntax enable
 set encoding=utf8
 set number
+set relativenumber
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -70,23 +70,19 @@ set nobackup
 set nowritebackup
 set noswapfile
 set tags+=tags,.tags
-set virtualedit=all
-" colorscheme nord
-colorscheme molokai
-" let g:rehash256 = 1
-" let g:molokai_original = 1
-
 set list listchars=tab:→\ ,trail:∙,nbsp:•
+set t_Co=256
+colorscheme molokai
+
 autocmd FileType html,css,javascript,jsx,vue EmmetInstall
 autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
-let g:prettier#autoformat = 0
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#trailing_comma = 'all'
 
-
+let g:prettier#autoformat                   = 0
+let g:prettier#config#single_quote          = 'false'
+let g:prettier#config#trailing_comma        = 'all'
 let g:goldenview__enable_default_mapping    = 0
-let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags$', '^tags.lock$', '^__pycache__$']
+let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags.temp$', '^tags$', '^tags.lock$', '^__pycache__$']
 let NERDTreeAutoDeleteBuffer                = 1
 let NERDTreeMinimalUI                       = 1
 let NERDTreeShowHidden                      = 1
@@ -97,12 +93,20 @@ let g:neocomplete#enable_at_startup         = 1
 let g:user_emmet_install_global             = 1
 let g:vim_json_syntax_conceal               = 0
 let g:airline_powerline_fonts               = 1
+let g:airline#extensions#ale#enabled        = 1
+let g:airline#extensions#tabline#enabled    = 1
 let g:user_emmet_install_global             = 0
 let g:go_auto_type_info                     = 1
-let g:go_def_mode                           ='gopls'
-let g:go_info_mode                          ='gopls'
+let g:go_def_mode                           = 'gopls'
+let g:go_info_mode                          = 'gopls'
 let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
+let g:go_highlight_extra_types              = 1
+let g:go_highlight_operators                = 1
+let g:go_highlight_functions                = 1
+let g:go_highlight_function_parameters      = 1
+let g:go_highlight_function_calls           = 1
+let g:go_highlight_types                    = 1
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
 let g:ale_linters                           = {'html': [''], 'javascript': ['eslint'], 'vue': ['eslint']}
@@ -114,10 +118,10 @@ let g:ale_echo_msg_warning_str              = 'W'
 let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_save                      = 1
 let g:ale_fix_on_save                       = 1
-let g:airline#extensions#ale#enabled        = 1
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
+let g:fzf_layout                            = { 'up': '~30%' }
 
 
 " custom key map
@@ -129,6 +133,8 @@ map <c-n> :NERDTreeToggle<CR>
 imap <c-s> <Esc>:w<CR>
 map <c-s> <Esc>:w<CR>
 map <c-f> <Esc>:Files<CR>
+map <c-b> <Esc>:Buffers<CR>
 map <c-g> <Esc>:Rg<CR>
-map ga <Plug>(EasyAlign)
 map <c-m> <Esc>:GoRun<CR>
+map ga <Plug>(EasyAlign)
+

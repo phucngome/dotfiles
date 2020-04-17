@@ -643,7 +643,7 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>240 255 799 448 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>196 325 922 386 0 0 1280 777 </string>
+	<string>0 58 1280 719 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1260,7 +1260,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.040402918781725888</real>
+			<real>0.016596605329949238</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -1290,12 +1290,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1280, 800}}</string>
 		<key>topLeft</key>
-		<string>{125, 568}</string>
+		<string>{191, 714}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>3508AF10-57AA-4E1D-9E40-DE0CE481C5A0</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>23</integer>
+	<integer>28</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
