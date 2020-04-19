@@ -643,7 +643,7 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>240 255 799 448 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 58 1280 719 0 0 1280 777 </string>
+	<string>200 201 810 348 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1290,12 +1290,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1280, 800}}</string>
 		<key>topLeft</key>
-		<string>{191, 714}</string>
+		<string>{400, 631}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>3508AF10-57AA-4E1D-9E40-DE0CE481C5A0</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>28</integer>
+	<integer>29</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2075,6 +2075,8 @@
 	<integer>0</integer>
 	<key>StretchTabsToFillBar</key>
 	<false/>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>6</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>VisualIndicatorForEsc</key>

@@ -117,7 +117,7 @@ let g:ale_echo_msg_error_str                = 'E'
 let g:ale_echo_msg_warning_str              = 'W'
 let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_save                      = 1
-let g:ale_fix_on_save                       = 1
+let g:ale_set_loclist                       = 0
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
@@ -130,11 +130,13 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <c-n> :NERDTreeToggle<CR>
+map ga <Plug>(EasyAlign)
 imap <c-s> <Esc>:w<CR>
 map <c-s> <Esc>:w<CR>
 map <c-f> <Esc>:Files<CR>
 map <c-b> <Esc>:Buffers<CR>
 map <c-g> <Esc>:Rg<CR>
 map <c-m> <Esc>:GoRun<CR>
-map ga <Plug>(EasyAlign)
+nmap <silent> [c <Plug>(ale_previous_wrap)
+nmap <silent> ]c <Plug>(ale_next_wrap)
 
