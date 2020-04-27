@@ -1,13 +1,12 @@
 #!/usr/bin/bash
 
 echo "Clearing VSCode cache..."
-rm -rf /Users/phucngo/Library/Application\ Support/Code/User/workspaceStorage/*
-rm -rf /Users/phucngo/Library/Application\ Support/Code/logs/*
-rm -rf /Users/phucngo/Library/Application\ Support/Code/Cache/*
-rm -rf /Users/phucngo/Library/Application\ Support/Code/CachedData/*
-rm -rf /Users/phucngo/Library/Application\ Support/Code/CachedExtensions/*
-rm -rf /Users/phucngo/Library/Application\ Support/Code/GPUCache/*
-#rm -rf /Users/phucngo/Library/Application\ Support/Code/Local\ Storage/*
+rm -rf /Users/phuc/Library/ApplicationSupport/Code/User/workspaceStorage/*
+rm -rf /Users/phuc/Library/ApplicationSupport/Code/logs/*
+rm -rf /Users/phuc/Library/ApplicationSupport/Code/Cache/*
+rm -rf /Users/phuc/Library/ApplicationSupport/Code/CachedData/*
+rm -rf /Users/phuc/Library/ApplicationSupport/Code/CachedExtensions/*
+rm -rf /Users/phuc/Library/ApplicationSupport/Code/GPUCache/*
 
 echo "Finshed clearing VSCode cache."
 

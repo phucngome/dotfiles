@@ -27,17 +27,17 @@ function! LoadPlug()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'pangloss/vim-javascript'
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'Yggdroot/indentLine'
     Plug 'posva/vim-vue'
     Plug 'hashivim/vim-terraform'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'jparise/vim-graphql'
     Plug 'phucngodev/molokai'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'chemzqm/vim-jsx-improve'
 
     call plug#end()
 
@@ -74,8 +74,8 @@ set list listchars=tab:→\ ,trail:∙,nbsp:•
 set t_Co=256
 colorscheme molokai
 
-autocmd FileType html,css,javascript,jsx,vue EmmetInstall
-autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html,css,javascript,jsx,vue,typescriptreact EmmetInstall
+autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 let g:prettier#autoformat                   = 0
@@ -109,6 +109,7 @@ let g:go_highlight_function_calls           = 1
 let g:go_highlight_types                    = 1
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
+let g:ale_linters_explicit                  = 1
 let g:ale_linters                           = {'html': [''], 'javascript': ['eslint'], 'vue': ['eslint']}
 let g:ale_fixers                            = {'javascript': ['eslint'], 'vue': ['eslint']}
 let g:ale_sign_error                        = '✘'
