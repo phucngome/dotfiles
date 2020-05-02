@@ -18,7 +18,6 @@ function! LoadPlug()
     Plug 'airblade/vim-gitgutter'
     Plug 'vim-airline/vim-airline'
     Plug 'Shougo/neocomplete.vim'
-    Plug 'w0rp/ale'
     Plug 'ervandew/supertab'
     Plug 'zhaocai/GoldenView.Vim'
     Plug 'ryanoasis/vim-devicons'
@@ -38,6 +37,7 @@ function! LoadPlug()
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'chemzqm/vim-jsx-improve'
+    Plug 'w0rp/ale'
 
     call plug#end()
 
@@ -93,7 +93,6 @@ let g:neocomplete#enable_at_startup         = 1
 let g:user_emmet_install_global             = 1
 let g:vim_json_syntax_conceal               = 0
 let g:airline_powerline_fonts               = 1
-let g:airline#extensions#ale#enabled        = 1
 let g:airline#extensions#tabline#enabled    = 1
 let g:user_emmet_install_global             = 0
 let g:go_auto_type_info                     = 1
@@ -108,13 +107,14 @@ let g:go_highlight_function_calls           = 1
 let g:go_highlight_types                    = 1
 let g:go_list_autoclose                     = 1
 let g:go_metalinter_autosave                = 1
-let g:go_list_type_commands                 = {"GoMetaLinter": "quickfix", "GoMetaLinterAutoSave": "quickfix"}
+let g:go_list_type                          = "quickfix"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
+let g:airline#extensions#ale#enabled        = 1
 
 
 " custom key map
