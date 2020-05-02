@@ -99,7 +99,6 @@ let g:user_emmet_install_global             = 0
 let g:go_auto_type_info                     = 1
 let g:go_def_mode                           = 'gopls'
 let g:go_info_mode                          = 'gopls'
-let g:go_list_type                          = "quickfix"
 let g:go_fmt_command                        = "goimports"
 let g:go_highlight_extra_types              = 1
 let g:go_highlight_operators                = 1
@@ -107,18 +106,11 @@ let g:go_highlight_functions                = 1
 let g:go_highlight_function_parameters      = 1
 let g:go_highlight_function_calls           = 1
 let g:go_highlight_types                    = 1
+let g:go_list_autoclose                     = 1
+let g:go_metalinter_autosave                = 1
+let g:go_list_type_commands                 = {"GoMetaLinter": "quickfix", "GoMetaLinterAutoSave": "quickfix"}
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
-let g:ale_linters_explicit                  = 1
-let g:ale_linters                           = {'html': [''], 'javascript': ['eslint'], 'vue': ['eslint']}
-let g:ale_fixers                            = {'javascript': ['eslint'], 'vue': ['eslint']}
-let g:ale_sign_error                        = '✘'
-let g:ale_sign_warning                      = '⚠'
-let g:ale_echo_msg_error_str                = 'E'
-let g:ale_echo_msg_warning_str              = 'W'
-let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
-let g:ale_lint_on_save                      = 1
-let g:ale_set_loclist                       = 0
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
@@ -138,6 +130,4 @@ map <c-f> <Esc>:Files<CR>
 map <c-b> <Esc>:Buffers<CR>
 map <c-g> <Esc>:Rg<CR>
 map <c-m> <Esc>:GoRun<CR>
-nmap <silent> [c <Plug>(ale_previous_wrap)
-nmap <silent> ]c <Plug>(ale_next_wrap)
 
