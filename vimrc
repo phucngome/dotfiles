@@ -107,6 +107,8 @@ let g:go_highlight_function_calls           = 1
 let g:go_highlight_types                    = 1
 let g:go_list_autoclose                     = 1
 let g:go_metalinter_autosave                = 1
+let g:go_metalinter_autosave_enabled        = ['vet', 'staticcheck']
+let g:go_metalinter_enabled                 = ['vet', 'staticcheck']
 let g:go_list_type                          = "quickfix"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
@@ -115,6 +117,7 @@ let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
 let g:airline#extensions#ale#enabled        = 1
+let g:ale_linters_explicit                  = 1
 
 
 " custom key map
@@ -130,4 +133,5 @@ map <c-f> <Esc>:Files<CR>
 map <c-b> <Esc>:Buffers<CR>
 map <c-g> <Esc>:Rg<CR>
 map <c-m> <Esc>:GoRun<CR>
+map <c-p> <Esc>:GoCoverageToggle<CR>
 
