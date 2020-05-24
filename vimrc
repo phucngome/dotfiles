@@ -74,7 +74,7 @@ set list listchars=tab:→\ ,trail:∙,nbsp:•
 set t_Co=256
 colorscheme molokai
 
-autocmd FileType html,css,javascript,jsx,vue,typescriptreact EmmetInstall
+autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
 autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
@@ -106,9 +106,6 @@ let g:go_highlight_function_parameters      = 1
 let g:go_highlight_function_calls           = 1
 let g:go_highlight_types                    = 1
 let g:go_list_autoclose                     = 1
-let g:go_metalinter_autosave                = 1
-let g:go_metalinter_autosave_enabled        = ['vet', 'staticcheck']
-let g:go_metalinter_enabled                 = ['vet', 'staticcheck']
 let g:go_list_type                          = "quickfix"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
@@ -117,7 +114,7 @@ let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
 let g:airline#extensions#ale#enabled        = 1
-let g:ale_linters_explicit                  = 1
+let g:ale_linters_explicit                  = 0
 
 
 " custom key map

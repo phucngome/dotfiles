@@ -11,10 +11,6 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
-
 
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
@@ -28,22 +24,22 @@ export GOPROXY=https://proxy.golang.org
 export GOPATH=/Users/phuc/Projects/go
 export PATH=${PATH}:$GOPATH/bin
 
-alias gw="cd /Users/phuc/Projects/go/src/github.com/phucngome"
 alias w="cd ~/Projects"
 alias gl="git log --graph"
 alias gs="git status"
 alias gf="git diff"
 alias gb="git branch"
 alias ll="ls -al"
-alias vscache="sh ~/.vscache"
-alias python="python3"
-alias pip="pip3"
 alias k="kubectl"
-alias rg='rg --files --hidden --glob=!.git/*'
 alias mongod="mongod --dbpath /Users/phuc/Projects/mongo --config /usr/local/etc/mongod.conf --fork"
-alias magento="php bin/magento"
+
+
 
 # postgresql
 export PATH=~/.npm-global/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob=!.git/*'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export DOCKER_HOST=192.168.64.8:2375
+export KUBECONFIG=~/.kube/microk8s.config
+export PGDATA=~/Projects/pgdata
