@@ -16,7 +16,6 @@ function! LoadPlug()
     Plug 'fatih/vim-go'
     Plug 'elzr/vim-json'
     Plug 'airblade/vim-gitgutter'
-    Plug 'vim-airline/vim-airline'
     Plug 'Shougo/neocomplete.vim'
     Plug 'ervandew/supertab'
     Plug 'zhaocai/GoldenView.Vim'
@@ -33,11 +32,13 @@ function! LoadPlug()
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'jparise/vim-graphql'
-    Plug 'phucngodev/molokai'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    " Plug 'w0rp/ale'
+    Plug 'phucngodev/vim-monokai-pro'
+    Plug 'itchyny/lightline.vim'
+    Plug 'sheerun/vim-polyglot'
     Plug 'chemzqm/vim-jsx-improve'
-    Plug 'w0rp/ale'
 
     call plug#end()
 
@@ -55,7 +56,6 @@ filetype plugin indent on
 syntax enable
 set encoding=utf8
 set number
-set relativenumber
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -71,8 +71,7 @@ set nowritebackup
 set noswapfile
 set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
-set t_Co=256
-colorscheme molokai
+colorscheme monokai_pro
 
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
 autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
@@ -92,8 +91,6 @@ let g:DevIconsEnableFoldersOpenClose        = 1
 let g:neocomplete#enable_at_startup         = 1
 let g:user_emmet_install_global             = 1
 let g:vim_json_syntax_conceal               = 0
-let g:airline_powerline_fonts               = 1
-let g:airline#extensions#tabline#enabled    = 1
 let g:user_emmet_install_global             = 0
 let g:go_auto_type_info                     = 1
 let g:go_def_mode                           = 'gopls'
@@ -113,8 +110,7 @@ let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
-let g:airline#extensions#ale#enabled        = 1
-let g:ale_linters_explicit                  = 0
+" let g:ale_linters_explicit                  = 0
 
 
 " custom key map
