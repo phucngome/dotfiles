@@ -15,7 +15,7 @@ function! LoadPlug()
     Plug 'mattn/emmet-vim'
     Plug 'fatih/vim-go'
     Plug 'elzr/vim-json'
-    Plug 'airblade/vim-gitgutter'
+    " Plug 'airblade/vim-gitgutter'
     Plug 'Shougo/neocomplete.vim'
     Plug 'ervandew/supertab'
     Plug 'zhaocai/GoldenView.Vim'
@@ -36,7 +36,8 @@ function! LoadPlug()
     Plug 'honza/vim-snippets'
     " Plug 'w0rp/ale'
     Plug 'phucngodev/vim-monokai-pro'
-    Plug 'itchyny/lightline.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'sheerun/vim-polyglot'
     Plug 'chemzqm/vim-jsx-improve'
 
@@ -46,7 +47,7 @@ function! LoadPlug()
         echo plug_installed
         echo "Plug Installed, now Installing Plugins..."
         echo ""
-        :PlugInstall
+        :PlugInstall 
     endif
 endfunction
 call LoadPlug()
@@ -87,14 +88,14 @@ let NERDTreeMinimalUI                       = 1
 let NERDTreeShowHidden                      = 1
 let g:webdevicons_enable_nerdtree           = 1
 let g:webdevicons_enable_airline_statusline = 1
+let g:airline_powerline_fonts               = 1
+let g:airline_theme                         ='powerlineish'
 let g:DevIconsEnableFoldersOpenClose        = 1
 let g:neocomplete#enable_at_startup         = 1
 let g:user_emmet_install_global             = 1
 let g:vim_json_syntax_conceal               = 0
 let g:user_emmet_install_global             = 0
 let g:go_auto_type_info                     = 1
-let g:go_def_mode                           = 'gopls'
-let g:go_info_mode                          = 'gopls'
 let g:go_fmt_command                        = "goimports"
 let g:go_highlight_extra_types              = 1
 let g:go_highlight_operators                = 1
