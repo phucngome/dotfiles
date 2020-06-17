@@ -422,7 +422,7 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>240 255 799 448 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 35 1280 742 0 0 1280 777 </string>
+	<string>198 331 810 348 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -669,7 +669,7 @@
 				<real>0.738189697265625</real>
 			</dict>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Bold Color</key>
@@ -1166,12 +1166,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1280, 800}}</string>
 		<key>topLeft</key>
-		<string>{318, 644}</string>
+		<string>{158, 698}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>9DE6831D-27A7-4610-8EF5-CE52E30968DF</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>12</integer>
+	<integer>13</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>

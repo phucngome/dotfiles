@@ -51,6 +51,7 @@ filetype plugin indent on
 syntax enable
 set encoding=UTF-8
 set number
+set relativenumber
 set nowrap
 set tabstop=4
 set shiftwidth=4
