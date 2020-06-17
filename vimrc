@@ -15,7 +15,6 @@ function! LoadPlug()
     Plug 'mattn/emmet-vim'
     Plug 'fatih/vim-go'
     Plug 'elzr/vim-json'
-    " Plug 'airblade/vim-gitgutter'
     Plug 'Shougo/neocomplete.vim'
     Plug 'ervandew/supertab'
     Plug 'zhaocai/GoldenView.Vim'
@@ -25,21 +24,16 @@ function! LoadPlug()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'HerringtonDarkholme/yats.vim'
     Plug 'Yggdroot/indentLine'
-    Plug 'posva/vim-vue'
     Plug 'hashivim/vim-terraform'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'jparise/vim-graphql'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    " Plug 'w0rp/ale'
-    Plug 'phucngodev/vim-monokai-pro'
+    Plug 'phucngodev/vim-mono'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'chemzqm/vim-jsx-improve'
 
     call plug#end()
 
@@ -73,7 +67,8 @@ set noswapfile
 set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 set completeopt-=preview
-colorscheme monokai_pro
+set background=dark
+colorscheme mono
 
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
 autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
@@ -97,12 +92,6 @@ let g:neocomplete#enable_at_startup         = 1
 let g:user_emmet_install_global             = 1
 let g:vim_json_syntax_conceal               = 0
 let g:user_emmet_install_global             = 0
-let g:go_highlight_extra_types              = 1
-let g:go_highlight_operators                = 1
-let g:go_highlight_functions                = 1
-let g:go_highlight_function_parameters      = 1
-let g:go_highlight_function_calls           = 1
-let g:go_highlight_types                    = 1
 let g:go_list_autoclose                     = 1
 let g:go_auto_type_info                     = 1
 let g:go_fmt_command                        = "goimports"
