@@ -55,7 +55,7 @@ call LoadPlug()
 
 filetype plugin indent on
 syntax enable
-set encoding=utf8
+set encoding=UTF-8
 set number
 set nowrap
 set tabstop=4
@@ -90,12 +90,19 @@ let NERDTreeShowHidden                      = 1
 let g:webdevicons_enable_nerdtree           = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline_powerline_fonts               = 1
-let g:airline_theme                         ='powerlineish'
+let g:airline_theme                         ='base16_grayscale'
 let g:DevIconsEnableFoldersOpenClose        = 1
 let g:neocomplete#enable_at_startup         = 1
 let g:user_emmet_install_global             = 1
 let g:vim_json_syntax_conceal               = 0
 let g:user_emmet_install_global             = 0
+let g:go_highlight_extra_types              = 1
+let g:go_highlight_operators                = 1
+let g:go_highlight_functions                = 1
+let g:go_highlight_function_parameters      = 1
+let g:go_highlight_function_calls           = 1
+let g:go_highlight_types                    = 1
+let g:go_list_autoclose                     = 1
 let g:go_auto_type_info                     = 1
 let g:go_fmt_command                        = "goimports"
 let g:go_list_autoclose                     = 1
