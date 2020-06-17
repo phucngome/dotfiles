@@ -72,6 +72,7 @@ set nowritebackup
 set noswapfile
 set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
+set completeopt-=preview
 colorscheme monokai_pro
 
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
@@ -97,12 +98,6 @@ let g:vim_json_syntax_conceal               = 0
 let g:user_emmet_install_global             = 0
 let g:go_auto_type_info                     = 1
 let g:go_fmt_command                        = "goimports"
-let g:go_highlight_extra_types              = 1
-let g:go_highlight_operators                = 1
-let g:go_highlight_functions                = 1
-let g:go_highlight_function_parameters      = 1
-let g:go_highlight_function_calls           = 1
-let g:go_highlight_types                    = 1
 let g:go_list_autoclose                     = 1
 let g:go_list_type                          = "quickfix"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
@@ -111,7 +106,6 @@ let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
-" let g:ale_linters_explicit                  = 0
 
 
 " custom key map
@@ -127,5 +121,3 @@ map <c-f> <Esc>:Files<CR>
 map <c-b> <Esc>:Buffers<CR>
 map <c-g> <Esc>:Rg<CR>
 map <c-m> <Esc>:GoRun<CR>
-map <c-p> <Esc>:GoCoverageToggle<CR>
-
