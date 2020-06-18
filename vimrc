@@ -37,6 +37,7 @@ function! LoadPlug()
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
     Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+    Plug 'fatih/vim-go'
 
     call plug#end()
 
@@ -77,8 +78,7 @@ colorscheme mono
 
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
-autocmd BufWritePre *.php silent! call PhpCsFixerFixFile()
-autocmd BufWritePre *.go silent! :call LanguageClient#textDocument_formatting_sync()
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags.temp$', '^tags$', '^tags.lock$', '^__pycache__$']
 let NERDTreeAutoDeleteBuffer                = 1
@@ -89,7 +89,7 @@ let g:WebDevIconsOS                         = 'Darwin'
 let g:webdevicons_enable_nerdtree           = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline_powerline_fonts               = 1
-let g:airline_theme                         ='base16_grayscale'
+let g:airline_theme                         = 'base16_grayscale'
 let g:user_emmet_install_global             = 1
 let g:user_emmet_install_global             = 0
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
@@ -101,6 +101,13 @@ let g:fzf_layout                            = { 'up': '~30%' }
 let g:deoplete#enable_at_startup            = 1
 let g:goldenview__enable_default_mapping    = 0
 let g:vim_json_syntax_conceal               = 0
+let g:go_gopls_options                      = ['-remote=auto']
+let g:go_gopls_enabled                      = 0
+let g:go_fmt_command                        = "goimports"
+let g:go_auto_type_info                     = 0
+let g:go_def_mapping_enabled                = 0
+let g:go_doc_keywordprg_enabled             = 0
+let g:go_code_completion_enabled            = 0
 
 
 " custom key map
@@ -115,6 +122,7 @@ map <c-s> <Esc>:w<CR>
 map <c-f> <Esc>:Files<CR>
 map <c-b> <Esc>:Buffers<CR>
 map <c-g> <Esc>:Rg<CR>
+map <c-m> <Esc>:GoRun<CR>
 map <c-]> <Esc>:call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 
