@@ -34,6 +34,8 @@ function! LoadPlug()
     Plug 'phucngodev/vim-mono'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'stephpy/vim-php-cs-fixer'
+    Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 
     call plug#end()
 
@@ -97,13 +99,17 @@ let g:go_list_autoclose                     = 1
 let g:go_auto_type_info                     = 1
 let g:go_fmt_command                        = "goimports"
 let g:go_list_autoclose                     = 1
-let g:go_list_type                          = "quickfix"
+" let g:go_list_type                          = "quickfix"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
+
+
+" PHP CS Fixer
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 
 " custom key map

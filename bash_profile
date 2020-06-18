@@ -38,8 +38,8 @@ alias mongod="mongod --dbpath /Users/phuc/Projects/mongo --config /usr/local/etc
 # postgresql
 export PATH=~/.npm-global/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob=!.git/*'
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export DOCKER_HOST=192.168.64.8:2375
 export KUBECONFIG=~/.kube/microk8s.config
 export PGDATA=~/Projects/pgdata
