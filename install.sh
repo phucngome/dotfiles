@@ -10,7 +10,6 @@ echo "Copy config files"
 
 cp bash_profile ~/.bash_profile
 cp vimrc ~/.vimrc
-cp vscache ~/.vscache
 cp global_ignore ~/.global_ignore
 cp ctags ~/.ctags
 cp gitconfig ~/.gitconfig
@@ -32,7 +31,7 @@ composer global require friendsofphp/php-cs-fixer "v2.16.3"
 
 
 echo "Install node tools"
-npm i -g prettier javascript-typescript-langserver
+npm i -g prettier javascript-typescript-langserver create-react-app
 
 # GO tools
 go get golang.org/x/tools/gopls@latest

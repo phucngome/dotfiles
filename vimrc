@@ -44,7 +44,7 @@ function! LoadPlug()
         echo plug_installed
         echo "Plug Installed, now Installing Plugins..."
         echo ""
-        :PlugInstall 
+        :PlugInstall
     endif
 endfunction
 call LoadPlug()
@@ -73,16 +73,13 @@ set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 set completeopt-=preview
 set signcolumn=no
-set background=dark
 colorscheme mono
 
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
-autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+autocmd BufWritePre *.php silent! call PhpCsFixerFixFile()
+autocmd BufWritePre *.go silent! :call LanguageClient#textDocument_formatting_sync()
 
-let g:goldenview__enable_default_mapping    = 0
 let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags.temp$', '^tags$', '^tags.lock$', '^__pycache__$']
 let NERDTreeAutoDeleteBuffer                = 1
 let NERDTreeMinimalUI                       = 1
@@ -94,7 +91,6 @@ let g:webdevicons_enable_airline_statusline = 1
 let g:airline_powerline_fonts               = 1
 let g:airline_theme                         ='base16_grayscale'
 let g:user_emmet_install_global             = 1
-let g:vim_json_syntax_conceal               = 0
 let g:user_emmet_install_global             = 0
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
@@ -103,6 +99,8 @@ let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
 let g:deoplete#enable_at_startup            = 1
+let g:goldenview__enable_default_mapping    = 0
+let g:vim_json_syntax_conceal               = 0
 
 
 " custom key map

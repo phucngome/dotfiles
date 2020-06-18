@@ -11,6 +11,7 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
@@ -18,11 +19,15 @@ export PATH=${PATH}:/usr/local/sbin
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-
 export GO111MODULE=on
 export GOPROXY=https://proxy.golang.org
 export GOPATH=/Users/phuc/Projects/go
 export PATH=${PATH}:$GOPATH/bin
+export PATH=~/.npm-global/bin:$PATH
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob=!.git/*'
+export DOCKER_HOST=192.168.64.8:2375
+export KUBECONFIG=~/.kube/microk8s.config
+export PGDATA=~/Projects/pgdata
 
 alias w="cd ~/Projects"
 alias gl="git log --graph"
@@ -32,14 +37,3 @@ alias gb="git branch"
 alias ll="ls -al"
 alias k="kubectl"
 alias mongod="mongod --dbpath /Users/phuc/Projects/mongo --config /usr/local/etc/mongod.conf --fork"
-
-
-
-# postgresql
-export PATH=~/.npm-global/bin:$PATH
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob=!.git/*'
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export DOCKER_HOST=192.168.64.8:2375
-export KUBECONFIG=~/.kube/microk8s.config
-export PGDATA=~/Projects/pgdata
