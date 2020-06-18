@@ -14,30 +14,28 @@ function! LoadPlug()
     Plug 'Raimondi/delimitMate'
     Plug 'mattn/emmet-vim'
     Plug 'elzr/vim-json'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'vim-airline/vim-airline'
-    Plug 'w0rp/ale'
     Plug 'ervandew/supertab'
     Plug 'zhaocai/GoldenView.Vim'
     Plug 'ryanoasis/vim-devicons'
     Plug 'uarun/vim-protobuf'
     Plug 'junegunn/vim-easy-align'
-    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'pangloss/vim-javascript'
-    Plug 'HerringtonDarkholme/yats.vim'
     Plug 'Yggdroot/indentLine'
-    Plug 'posva/vim-vue'
     Plug 'hashivim/vim-terraform'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'jparise/vim-graphql'
-    Plug 'phucngodev/molokai'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'phucngodev/vim-mono'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'stephpy/vim-php-cs-fixer'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+    Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+    Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 
 
     call plug#end()
@@ -46,7 +44,7 @@ function! LoadPlug()
         echo plug_installed
         echo "Plug Installed, now Installing Plugins..."
         echo ""
-        :PlugInstall
+        :PlugInstall 
     endif
 endfunction
 call LoadPlug()
@@ -54,8 +52,9 @@ call LoadPlug()
 
 filetype plugin indent on
 syntax enable
-set encoding=utf8
+set encoding=UTF-8
 set number
+set hidden
 set relativenumber
 set nowrap
 set tabstop=4
@@ -72,53 +71,37 @@ set nowritebackup
 set noswapfile
 set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
-set t_Co=256
-colorscheme molokai
+set completeopt-=preview
+set background=dark
+colorscheme mono
 
-autocmd FileType html,css,javascript,jsx,vue EmmetInstall
-autocmd FileType css,html,javascript,vue,yaml setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
+autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
-let g:prettier#autoformat                   = 0
-let g:prettier#config#single_quote          = 'false'
-let g:prettier#config#trailing_comma        = 'all'
 let g:goldenview__enable_default_mapping    = 0
 let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags.temp$', '^tags$', '^tags.lock$', '^__pycache__$']
 let NERDTreeAutoDeleteBuffer                = 1
 let NERDTreeMinimalUI                       = 1
 let NERDTreeShowHidden                      = 1
+let g:webdevicons_enable                    = 1
+let g:WebDevIconsOS                         = 'Darwin'
 let g:webdevicons_enable_nerdtree           = 1
 let g:webdevicons_enable_airline_statusline = 1
-let g:DevIconsEnableFoldersOpenClose        = 1
+let g:airline_powerline_fonts               = 1
+let g:airline_theme                         ='base16_grayscale'
 let g:user_emmet_install_global             = 1
 let g:vim_json_syntax_conceal               = 0
-let g:airline_powerline_fonts               = 1
-let g:airline#extensions#ale#enabled        = 1
-let g:airline#extensions#tabline#enabled    = 1
 let g:user_emmet_install_global             = 0
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
-let g:ale_linters                           = {'html': [''], 'javascript': ['eslint'], 'vue': ['eslint']}
-let g:ale_fixers                            = {'javascript': ['eslint'], 'vue': ['eslint']}
-let g:ale_sign_error                        = '✘'
-let g:ale_sign_warning                      = '⚠'
-let g:ale_echo_msg_error_str                = 'E'
-let g:ale_echo_msg_warning_str              = 'W'
-let g:ale_echo_msg_format                   = '[%linter%] %s [%severity%]'
-let g:ale_lint_on_save                      = 1
-let g:ale_fix_on_save                       = 1
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
-
-
 let g:deoplete#enable_at_startup = 1
-let g:LanguageClient_serverCommands = {
-       \ 'go': ['gopls']
-       \ }
-
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 
 " custom key map
@@ -131,10 +114,15 @@ map ga <Plug>(EasyAlign)
 imap <c-s> <Esc>:w<CR>
 map <c-s> <Esc>:w<CR>
 map <c-f> <Esc>:Files<CR>
-map <c-t> <Esc>:Buffers<CR>
+map <c-b> <Esc>:Buffers<CR>
 map <c-g> <Esc>:Rg<CR>
-map <c-m> :call LanguageClient_contextMenu()<CR>
-map <c-k> :call LanguageClient#textDocument_hover()<CR>
-map <c-]> :call LanguageClient#textDocument_definition()<CR>
-map <c-i> :call LanguageClient#textDocument_codeAction()<CR>
+map <c-m> <Esc>:GoRun<CR>
+map <c-]> <Esc>:call LanguageClient#textDocument_definition()<CR>
+map <c-k> <Esc>:call LanguageClient#textDocument_hover()<CR>
 
+" Config language server client
+let g:LanguageClient_serverCommands = {
+\ 'go': ['gopls'],
+\ 'php': ['phpactor', 'language-server'],
+\ 'javascript': ['javascript-typescript-stdio'],
+\ }

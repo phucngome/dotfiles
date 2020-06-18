@@ -21,7 +21,7 @@ function! LoadPlug()
     Plug 'ryanoasis/vim-devicons'
     Plug 'uarun/vim-protobuf'
     Plug 'junegunn/vim-easy-align'
-    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'Yggdroot/indentLine'
@@ -34,8 +34,6 @@ function! LoadPlug()
     Plug 'phucngodev/vim-mono'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'stephpy/vim-php-cs-fixer'
-    Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 
     call plug#end()
 
@@ -53,7 +51,7 @@ filetype plugin indent on
 syntax enable
 set encoding=UTF-8
 set number
-set relativenumber
+" set relativenumber
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -99,17 +97,12 @@ let g:go_list_autoclose                     = 1
 let g:go_auto_type_info                     = 1
 let g:go_fmt_command                        = "goimports"
 let g:go_list_autoclose                     = 1
-" let g:go_list_type                          = "quickfix"
 let g:user_emmet_settings                   = {'javascript' : {'extends': 'jsx'}}
 let g:user_emmet_leader_key                 = ','
 let g:terraform_align                       = 1
 let g:terraform_fmt_on_save                 = 1
 let g:UltiSnipsExpandTrigger                = "<tab>"
 let g:fzf_layout                            = { 'up': '~30%' }
-
-
-" PHP CS Fixer
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 
 " custom key map
