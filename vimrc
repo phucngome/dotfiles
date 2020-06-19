@@ -38,6 +38,8 @@ function! LoadPlug()
     Plug 'roxma/vim-hug-neovim-rpc'
     Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
     Plug 'fatih/vim-go'
+    Plug 'dense-analysis/ale'
+    Plug 'airblade/vim-gitgutter'
 
     call plug#end()
 
@@ -55,7 +57,7 @@ filetype plugin indent on
 syntax enable
 set encoding=UTF-8
 set number
-set relativenumber
+" set relativenumber
 set hidden
 set nowrap
 set tabstop=4
@@ -73,7 +75,6 @@ set noswapfile
 set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 set completeopt-=preview
-set signcolumn=no
 colorscheme mono
 
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
@@ -108,7 +109,7 @@ let g:go_auto_type_info                     = 0
 let g:go_def_mapping_enabled                = 0
 let g:go_doc_keywordprg_enabled             = 0
 let g:go_code_completion_enabled            = 0
-
+let g:airline#extensions#ale#enabled        = 1
 
 " custom key map
 map <C-j> <C-W>j
