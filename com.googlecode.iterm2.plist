@@ -422,7 +422,7 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>240 255 799 448 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>243 166 810 348 0 0 1280 777 </string>
+	<string>0 35 1280 742 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1171,7 +1171,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>9DE6831D-27A7-4610-8EF5-CE52E30968DF</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>21</integer>
+	<integer>41</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1932,7 +1932,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-18T07:11:14Z</date>
+	<date>2020-06-24T12:14:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1953,6 +1953,8 @@
 	<integer>0</integer>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.11</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>

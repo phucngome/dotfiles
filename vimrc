@@ -22,13 +22,9 @@ function! LoadPlug()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'Yggdroot/indentLine'
     Plug 'hashivim/vim-terraform'
-    Plug 'ludovicchabant/vim-gutentags'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'jparise/vim-graphql'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
     Plug 'phucngodev/vim-mono'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -38,8 +34,8 @@ function! LoadPlug()
     Plug 'roxma/vim-hug-neovim-rpc'
     Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
     Plug 'fatih/vim-go'
-    Plug 'dense-analysis/ale'
-    Plug 'airblade/vim-gitgutter'
+    " Plug 'dense-analysis/ale'
+    Plug 'phucngodev/vim-monokai-pro'
 
     call plug#end()
 
@@ -57,7 +53,6 @@ filetype plugin indent on
 syntax enable
 set encoding=UTF-8
 set number
-" set relativenumber
 set hidden
 set nowrap
 set tabstop=4
@@ -76,12 +71,14 @@ set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 set completeopt-=preview
 colorscheme mono
+set signcolumn=no
 
+autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
-let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags.temp$', '^tags$', '^tags.lock$', '^__pycache__$']
+let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags.temp$', '^tags$', '^tags.lock$', '^__pycache__$', '^.php_cs.cache$']
 let NERDTreeAutoDeleteBuffer                = 1
 let NERDTreeMinimalUI                       = 1
 let NERDTreeShowHidden                      = 1
@@ -109,7 +106,8 @@ let g:go_auto_type_info                     = 0
 let g:go_def_mapping_enabled                = 0
 let g:go_doc_keywordprg_enabled             = 0
 let g:go_code_completion_enabled            = 0
-let g:airline#extensions#ale#enabled        = 1
+let g:go_list_autoclose                     = 1
+let g:go_list_type                          = "quickfix"
 
 " custom key map
 map <C-j> <C-W>j
