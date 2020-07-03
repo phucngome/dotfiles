@@ -34,7 +34,7 @@ function! LoadPlug()
     Plug 'roxma/vim-hug-neovim-rpc'
     Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
     Plug 'fatih/vim-go'
-    " Plug 'dense-analysis/ale'
+    Plug 'dense-analysis/ale'
     Plug 'phucngodev/vim-monokai-pro'
 
     call plug#end()
@@ -42,8 +42,7 @@ function! LoadPlug()
     if plug_installed==0
         echo plug_installed
         echo "Plug Installed, now Installing Plugins..."
-        echo ""
-        :PlugInstall
+        echo "" :PlugInstall
     endif
 endfunction
 call LoadPlug()
@@ -71,7 +70,7 @@ set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 set completeopt-=preview
 colorscheme mono
-set signcolumn=no
+" set signcolumn=no
 
 autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
@@ -107,7 +106,9 @@ let g:go_def_mapping_enabled                = 0
 let g:go_doc_keywordprg_enabled             = 0
 let g:go_code_completion_enabled            = 0
 let g:go_list_autoclose                     = 1
-let g:go_list_type                          = "quickfix"
+let g:ale_lint_on_text_changed              = 0
+let g:ale_lint_on_enter                     = 0
+let g:ale_lint_on_save                      = 1
 
 " custom key map
 map <C-j> <C-W>j
