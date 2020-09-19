@@ -2,7 +2,7 @@
 
 echo "Install brew"
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew install vim ripgrep ctags htop
 
@@ -13,21 +13,16 @@ cp vimrc ~/.vimrc
 cp global_ignore ~/.global_ignore
 cp ctags ~/.ctags
 cp gitconfig ~/.gitconfig
-cp npmrc ~/.npmrc
 mkdir ~/.npm-global
-
-# Neovim
-# brew install neovim
-# mkdir ~/.config/nvim
-# cp init.vim ~/.config/nvim
+cp npmrc ~/.npmrc
 
 echo "Install composer"
 curl -Ss https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 sudo chmod +x /usr/local/bin/composer
 
-composer global require phpactor/phpactor "0.16.*"
-composer global require friendsofphp/php-cs-fixer "v2.16.3"
+composer global require phpactor/phpactor
+composer global require friendsofphp/php-cs-fixer
 
 
 echo "Install node tools"

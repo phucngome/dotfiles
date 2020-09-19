@@ -3,16 +3,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export BASH_SILENCE_DEPRECATION_WARNING=1
-
-function _update_ps1() {
-    PS1="$(powerline-go  -modules=venv,user,ssh,cwd,git,exit,root,jobs,perms  -cwd-max-depth=1 -truncate-segment-width=0 $?)"
-}
-if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
 export PATH=${PATH}:/usr/local/sbin
@@ -37,3 +27,7 @@ alias gb="git branch"
 alias ll="ls -al"
 alias k="kubectl"
 alias mongod="mongod --dbpath /Users/phuc/Projects/mongo --config /usr/local/etc/mongod.conf --fork"
+
+export STARSHIP_CONFIG=/Users/phuc/Projects/dotfiles/starship.toml
+eval "$(starship init bash)"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

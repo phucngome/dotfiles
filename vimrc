@@ -35,7 +35,7 @@ function! LoadPlug()
     Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
     Plug 'fatih/vim-go'
     Plug 'dense-analysis/ale'
-    Plug 'phucngodev/vim-monokai-pro'
+    " Plug 'phucngodev/vim-monokai-pro'
 
     call plug#end()
 
