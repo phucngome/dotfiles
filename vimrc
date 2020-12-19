@@ -25,7 +25,6 @@ function! LoadPlug()
     Plug 'hashivim/vim-terraform'
     Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'jparise/vim-graphql'
-    Plug 'phucngodev/vim-mono'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'stephpy/vim-php-cs-fixer'
@@ -34,8 +33,8 @@ function! LoadPlug()
     Plug 'roxma/vim-hug-neovim-rpc'
     Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
     Plug 'fatih/vim-go'
-    Plug 'dense-analysis/ale'
-    " Plug 'phucngodev/vim-monokai-pro'
+    Plug 'phucngodev/mono'
+    Plug 'phucngodev/mono-pro'
 
     call plug#end()
 
@@ -70,12 +69,12 @@ set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 set completeopt-=preview
 colorscheme mono
-" set signcolumn=no
+" colorscheme mono_pro
 
 autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
+" autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 let NERDTreeIgnore                          = ['\.git$', '\.DS_Store$', '^var$', '\.vscode$', '^node_modules$', '^tags.temp$', '^tags$', '^tags.lock$', '^__pycache__$', '^.php_cs.cache$']
 let NERDTreeAutoDeleteBuffer                = 1
@@ -106,9 +105,7 @@ let g:go_def_mapping_enabled                = 0
 let g:go_doc_keywordprg_enabled             = 0
 let g:go_code_completion_enabled            = 0
 let g:go_list_autoclose                     = 1
-let g:ale_lint_on_text_changed              = 0
-let g:ale_lint_on_enter                     = 0
-let g:ale_lint_on_save                      = 1
+
 
 " custom key map
 map <C-j> <C-W>j

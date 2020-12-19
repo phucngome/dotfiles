@@ -3,7 +3,9 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
 export EDITOR=vim
+export PATH=/usr/local/opt/python@3.9/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=${PATH}:/usr/local/sbin
 export PATH=/usr/local/php5/bin:$PATH
