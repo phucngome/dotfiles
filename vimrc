@@ -35,6 +35,7 @@ function! LoadPlug()
     Plug 'fatih/vim-go'
     Plug 'phucngodev/mono'
     Plug 'phucngodev/mono-pro'
+    Plug 'arcticicestudio/nord-vim'
 
     call plug#end()
 
@@ -70,9 +71,10 @@ set list listchars=tab:→\ ,trail:∙,nbsp:•
 set completeopt-=preview
 colorscheme mono
 " colorscheme mono_pro
+" colorscheme nord
 
 autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php EmmetInstall
+autocmd FileType html,css,javascript,jsx,vue,typescriptreact,php,mustache EmmetInstall
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 " autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 

@@ -1,1 +1,15 @@
 add_newline = false
+[line_break]
+disabled = true
+
+[cmd_duration]
+disabled=true
+
+[golang]
+disabled=true
+
+[php]
+disabled=true
+
+[nodejs]
+disabled=true

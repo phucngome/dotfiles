@@ -17,8 +17,8 @@ export GOPATH=/Users/phuc/Projects/go
 export PATH=${PATH}:$GOPATH/bin
 export PATH=~/.npm-global/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob=!.git/*'
-export DOCKER_HOST=192.168.64.8:2375
-export KUBECONFIG=~/.kube/microk8s.config
+# export DOCKER_HOST=192.168.64.8:2375
+# export KUBECONFIG=~/.kube/microk8s.config
 export PGDATA=~/Projects/pgdata
 
 alias w="cd ~/Projects"
@@ -30,6 +30,5 @@ alias ll="ls -al"
 alias k="kubectl"
 alias mongod="mongod --dbpath /Users/phuc/Projects/mongo --config /usr/local/etc/mongod.conf --fork"
 
-export STARSHIP_CONFIG=/Users/phuc/Projects/dotfiles/starship.toml
 eval "$(starship init bash)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
