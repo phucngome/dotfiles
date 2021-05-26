@@ -989,13 +989,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.93783509731292725</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.78877889270738211</real>
+				<real>0.62910487429690842</real>
 				<key>Red Component</key>
-				<real>0.49167871475219727</real>
+				<real>0.34477475622324505</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1023,6 +1023,8 @@
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
+			<key>Cursor Type</key>
+			<integer>0</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>

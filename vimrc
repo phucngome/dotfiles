@@ -35,7 +35,6 @@ function! LoadPlug()
     Plug 'fatih/vim-go'
     Plug 'phucngodev/mono'
     Plug 'phucngodev/mono-pro'
-    Plug 'arcticicestudio/nord-vim'
 
     call plug#end()
 
@@ -69,8 +68,8 @@ set noswapfile
 set tags+=tags,.tags
 set list listchars=tab:→\ ,trail:∙,nbsp:•
 set completeopt-=preview
-colorscheme mono
-" colorscheme mono_pro
+" colorscheme mono
+colorscheme mono_pro
 " colorscheme nord
 
 autocmd FileType css,html,javascript,vue,yaml,typescript,typescriptreact,scss setlocal shiftwidth=2 softtabstop=2 expandtab
@@ -83,7 +82,6 @@ let NERDTreeAutoDeleteBuffer                = 1
 let NERDTreeMinimalUI                       = 1
 let NERDTreeShowHidden                      = 1
 let g:webdevicons_enable                    = 1
-let g:WebDevIconsOS                         = 'Darwin'
 let g:webdevicons_enable_nerdtree           = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:airline_powerline_fonts               = 1
@@ -107,7 +105,9 @@ let g:go_def_mapping_enabled                = 0
 let g:go_doc_keywordprg_enabled             = 0
 let g:go_code_completion_enabled            = 0
 let g:go_list_autoclose                     = 1
-
+let g:go_highlight_functions                = 1
+let g:go_highlight_types                    = 1
+let g:go_highlight_function_calls           = 1
 
 " custom key map
 map <C-j> <C-W>j
